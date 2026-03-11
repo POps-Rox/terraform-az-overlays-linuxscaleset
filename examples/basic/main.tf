@@ -1,5 +1,5 @@
 module "vmss_linux" {
-  #source  = "azurenoops/overlays-linux-scaleset/azurerm"
+  #source  = "github.com/POps-Rox/tf-az-overlays-linuxscaleset"
   #version = "x.x.x"
   source = "../.."
 
