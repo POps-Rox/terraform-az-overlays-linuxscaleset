@@ -28,7 +28,7 @@ More details are available in the [CONTRIBUTING.md](./CONTRIBUTING.md#pull-reque
 
 ```hcl
 module "vmss_linux" {
-  source  = "azurenoops/overlays-linux-scaleset/azurerm"
+  source  = "POps-Rox/tf-az-overlays-linux-scaleset/azurerm"
   version = "x.x.x"
 
   # By default, this module will create a resource group and 
