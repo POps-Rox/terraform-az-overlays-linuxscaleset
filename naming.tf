@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-data "popsrox_utils_resource_name" "vmss_linux" {
+data "popsrox_resource_name" "vmss_linux" {
   name          = var.workload_name
   resource_type = "azurerm_linux_virtual_machine_scale_set"
   prefixes      = [var.org_name, module.mod_azure_region_lookup.location_short]
@@ -11,7 +11,7 @@ data "popsrox_utils_resource_name" "vmss_linux" {
   separator     = "-"
 }
 
-data "popsrox_utils_resource_name" "nic" {
+data "popsrox_resource_name" "nic" {
   name          = var.workload_name
   resource_type = "azurerm_network_interface"
   prefixes      = [var.org_name, module.mod_azure_region_lookup.location_short]
@@ -21,7 +21,7 @@ data "popsrox_utils_resource_name" "nic" {
   separator     = "-"
 }
 
-data "popsrox_utils_resource_name" "ipconfig" {
+data "popsrox_resource_name" "ipconfig" {
   name          = var.workload_name
   resource_type = "azurerm_resource_group"
   prefixes      = [var.org_name, module.mod_azure_region_lookup.location_short]
