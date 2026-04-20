@@ -1,10 +1,10 @@
 # Changelog
 
-## [v1.0.0](https://github.com/azurenoops/terraform-azurerm-overlays-linux-scaleset/tree/v1.0.0) (2023-03-28)
+## [v1.0.0](https://github.com/POps-Rox/terraform-az-overlays-linuxscaleset/tree/v1.0.0) (2023-03-28)
 
 **Merged pull requests:**
 
-- init source [\#1](https://github.com/azurenoops/terraform-azurerm-overlays-linux-scaleset/pull/1) ([jrspinella](https://github.com/jrspinella))
+- init source [\#1](https://github.com/POps-Rox/terraform-az-overlays-linuxscaleset/pull/1) ([jrspinella](https://github.com/jrspinella))
 
 
 
