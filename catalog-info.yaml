@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tf-az-overlays-linuxscaleset
+  name: terraform-az-overlays-linuxscaleset
   description: Terraform overlay module for Azure Linux VM Scale Sets
   annotations:
-    github.com/project-slug: POps-Rox/tf-az-overlays-linuxscaleset
+    github.com/project-slug: POps-Rox/terraform-az-overlays-linuxscaleset
     backstage.io/techdocs-ref: dir:.
   tags:
     - terraform
@@ -12,7 +12,7 @@ metadata:
     - azure
     - platform-ops
   links:
-    - url: https://github.com/POps-Rox/tf-az-overlays-linuxscaleset
+    - url: https://github.com/POps-Rox/terraform-az-overlays-linuxscaleset
       title: GitHub Repository
       icon: github
 spec:

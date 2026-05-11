@@ -1,5 +1,5 @@
 module "vmss_linux" {
-  #source  = "github.com/POps-Rox/tf-az-overlays-linuxscaleset"
+  #source  = "github.com/POps-Rox/terraform-az-overlays-linuxscaleset"
   #version = "x.x.x"
   source = "../.."
 
