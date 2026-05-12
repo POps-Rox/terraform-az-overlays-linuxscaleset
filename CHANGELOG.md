@@ -1,5 +1,19 @@
 # Changelog
 
+## [v2.0.0] - TBD
+
+**BREAKING CHANGES:**
+- Upgraded azurerm provider from ~> 3.116 to ~> 4.20
+- Upgraded Terraform minimum version from >= 1.9 to >= 1.10
+- Added azapi provider ~> 2.0 as required dependency
+
+**Changes:**
+- Applied azurerm 3.x → 4.x attribute renames (none found in this module)
+- Verified VMSS resources: already using `azurerm_linux_virtual_machine_scale_set` (no migration needed)
+- No retention_policy or diagnostic setting changes required
+
+**Note:** Modules sourcing this module must also upgrade to azurerm ~> 4.20 for compatibility.
+
 ## [v1.0.0](https://github.com/POps-Rox/terraform-az-overlays-linuxscaleset/tree/v1.0.0) (2023-03-28)
 
 **Merged pull requests:**
