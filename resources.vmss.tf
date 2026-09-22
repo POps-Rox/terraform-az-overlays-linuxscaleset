@@ -41,12 +41,12 @@ resource "azurerm_linux_virtual_machine_scale_set" "linux_vmss" {
   source_image_id = var.source_image_id
 
   network_interface {
-    name                          = local.nic_name
-    primary                       = true
-    dns_servers                   = var.dns_servers
-    enable_ip_forwarding          = var.ip_forwarding_enabled
-    enable_accelerated_networking = var.accelerated_networking
-    network_security_group_id     = var.network_security_group_id
+    name                           = local.nic_name
+    primary                        = true
+    dns_servers                    = var.dns_servers
+    ip_forwarding_enabled          = var.ip_forwarding_enabled
+    accelerated_networking_enabled = var.accelerated_networking
+    network_security_group_id      = var.network_security_group_id
 
     ip_configuration {
       name                                         = local.ipconfig_name
@@ -77,16 +77,16 @@ resource "azurerm_linux_virtual_machine_scale_set" "linux_vmss" {
   dynamic "data_disk" {
     for_each = var.data_disks
     content {
-      name                           = data_disk.name
-      caching                        = data_disk.caching
-      create_option                  = data_disk.create_option
-      disk_size_gb                   = data_disk.disk_size_gb
-      lun                            = data_disk.lun
-      storage_account_type           = data_disk.storage_account_type
-      disk_encryption_set_id         = data_disk.disk_encryption_set_id
-      ultra_ssd_disk_iops_read_write = data_disk.disk_iops_read_write
-      ultra_ssd_disk_mbps_read_write = data_disk.disk_mbps_read_write
-      write_accelerator_enabled      = data_disk.write_accelerator_enabled
+      name                      = data_disk.value.name
+      caching                   = data_disk.value.caching
+      create_option             = data_disk.value.create_option
+      disk_size_gb              = data_disk.value.disk_size_gb
+      lun                       = data_disk.value.lun
+      storage_account_type      = data_disk.value.storage_account_type
+      disk_encryption_set_id    = data_disk.value.disk_encryption_set_id
+      disk_iops_read_write      = data_disk.value.disk_iops_read_write
+      disk_mbps_read_write      = data_disk.value.disk_mbps_read_write
+      write_accelerator_enabled = data_disk.value.write_accelerator_enabled
     }
   }
 
@@ -94,8 +94,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "linux_vmss" {
   dynamic "automatic_os_upgrade_policy" {
     for_each = var.upgrade_mode == "Automatic" ? ["empty"] : []
     content {
-      disable_automatic_rollback  = var.disable_automatic_rollback
-      enable_automatic_os_upgrade = var.automatic_os_upgrade
+      automatic_rollback_enabled   = !var.disable_automatic_rollback
+      automatic_os_upgrade_enabled = var.automatic_os_upgrade
     }
   }
 

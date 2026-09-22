@@ -28,7 +28,7 @@ module "mod_linux_vmss_rg" {
   org_name                = var.org_name
   environment             = var.deploy_environment
   workload_name           = var.workload_name
-  custom_rg_name          = var.custom_resource_group_name != null ? var.custom_resource_group_name : null
+  custom_rg_name          = var.custom_resource_group_name != null && var.custom_resource_group_name != "" ? var.custom_resource_group_name : null
 
   // Tags
   add_tags = merge(var.add_tags, {
